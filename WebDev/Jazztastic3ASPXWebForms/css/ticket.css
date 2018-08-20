@@ -1,0 +1,38 @@
+.parallax-window {
+  position: relative;
+  /* top: -220px; */
+  min-height: 770px;
+  background: transparent;
+}
+
+.priority-mt {
+  margin-top: 5rem;
+}
+
+.normal-mt {
+  margin-top: 10rem;
+}
+
+.ticket-top {
+  background-color: #90CAF9;
+  width: 18rem;
+}
+
+.ticket-body {
+  background-color: #FFFFFF;
+  width: 18rem;
+  right: 1px;
+}
+
+.ticket-footer {
+  background-color: #90CAF9;
+  width: 18rem;
+  right: 1px;
+  top: 1px;
+}
+
+.ticket-buy {
+  background-color: #E91E63;
+  width: 5rem;
+  color: white;
+}

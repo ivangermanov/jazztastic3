@@ -1,0 +1,33 @@
+﻿<Window x:Class="ManagementApplication.DetailWindows.ItemDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagementApplication.DetailWindows"
+        mc:Ignorable="d"
+        Title="ItemDetailWindow" Height="250" Width="600" Background="#FFFFFF"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Background="#78A1BB">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Label Content="Item No" Width="150" FontSize="16"/>
+                    <Label Content="Name" Width="150" FontSize="16"/>
+                    <Label Content="Type" Width="150" FontSize="16"/>
+                    <Label Content="Price" Width="150" FontSize="16"/>
+                    <Label Content="Initial QOH" Width="150" FontSize="16"/>
+                    <Label Content="Description" Width="150" FontSize="16"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Name="itemNo" Content="" Width="225" FontSize="16"/>
+                    <Label Name="name" Content="" Width="225" FontSize="16"/>
+                    <Label Name="type" Content="" Width="225" FontSize="16"/>
+                    <Label Name="price" Content="" Width="225" FontSize="16"/>
+                    <Label Name="intialQOH" Content="" Width="225" FontSize="16"/>
+                    <Label Name="description" Content="" Width="225" FontSize="16"/>
+                </StackPanel>
+                <Image Name="itemImage" Width="128" Height="128"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

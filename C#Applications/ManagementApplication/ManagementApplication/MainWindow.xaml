@@ -1,0 +1,20 @@
+﻿<Window x:Class="ManagementApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagementApplication"
+        mc:Ignorable="d"
+        Title="Management"
+        ResizeMode="NoResize"
+        WindowStyle ="None"
+        WindowState="Maximized" Width="800" Height="490" Closing="Window_Closing" Topmost="True">
+    <Viewbox StretchDirection="Both" Stretch="UniformToFill">
+        <Grid>
+            <Frame Width="800" Height="490" Name="MainWindowFrame" NavigationUIVisibility="Hidden">
+
+            </Frame>
+        </Grid>
+    </Viewbox>
+</Window>
+

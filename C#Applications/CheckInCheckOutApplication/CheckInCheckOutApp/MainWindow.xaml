@@ -1,0 +1,21 @@
+﻿<Window x:Class="CheckInCheckOutApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckInCheckOutApp"
+        mc:Ignorable="d"
+        Title="Jazztastic 3 Check-in/Check-out" Height="490" Width="800"
+        Icon="Resources/icon.ico"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="NoResize" Closing="Window_Closing" Topmost="True"
+        >
+    <Viewbox StretchDirection="Both" Stretch="UniformToFill">
+        <Grid Height="490" Width="800">
+        <Frame Width="800" Height="490" Name="MainWindowFrame" NavigationUIVisibility="Hidden">
+
+        </Frame>
+    </Grid>
+    </Viewbox>
+</Window>

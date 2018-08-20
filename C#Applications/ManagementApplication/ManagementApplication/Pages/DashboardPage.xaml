@@ -1,0 +1,40 @@
+﻿<Page x:Class="ManagementApplication.Pages.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ManagementApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DashboardPage" Background="#FFFFFF">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Background="#FF283043" Orientation="Horizontal" Height="75">
+                <StackPanel Background="#EAF5ED" Orientation="Horizontal" Margin="8">
+                        <StackPanel>
+                            <Label Content="Name" FontSize="16"/>
+                            <Label Content="Employee ID " FontSize="16"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Name="employeeName" Content="" FontSize="16" Width="200"/>
+                            <Label Name="employeeId" Content="" FontSize="16"/>
+                        </StackPanel>
+                    </StackPanel>
+                <Button Content="Logout" FontSize="24" Width="100" Background="#EBF5ED" Margin="340, 12, 0, 12" Click="btn_Logout_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 80, 0, 32">
+                <Button Content="Stand Overview" FontSize="12" Width="100" Height="100" Background="#78A1BB" Foreground="#FFFFFF" Margin="0, 0, 64 0" Click="btn_StandOverview_Click"/>
+                <Button Content="Event Overview" FontSize="12" Width="100" Height="100" Background="#78A1BB" Foreground="#FFFFFF" Margin="64, 0, 64, 0" Click="btn_EventOverview_Click"/>
+                <Button Content="Visitor Overview" FontSize="12" Width="100" Height="100" Background="#78A1BB" Foreground="#FFFFFF" Margin="64, 0, 0, 0" Click="btn_VisitorOverview_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 0">
+                <Button Content="Item Overview" FontSize="12" Width="100" Height="100" Background="#78A1BB" Foreground="#FFFFFF" Margin="0, 0, 64, 0" Click="btn_ItemOverview_Click"/>
+                <Button Content="Receipt Overview" FontSize="12" Width="100" Height="100" Background="#78A1BB" Foreground="#FFFFFF" Margin="64, 0, 64, 0" Click="btn_ReceiptOverview_Click"/>
+                <Button Width="100" Height="100" Background="#78A1BB" Foreground="#FFFFFF" Margin="64, 0, 0, 0" Click="btn_MissingItemsOverview_Click">
+                    <TextBlock FontSize="12">Visitor Items<LineBreak/>Overview</TextBlock>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,77 @@
+﻿<Page x:Class="ManagementApplication.Pages.ItemOverviewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ManagementApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ItemOverviewPage" Background="#FFFFFF" Loaded="Page_Loaded">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Height="100" Background="#FF283044" Orientation="Horizontal">
+                <Label Content="Item Overview" Width="400" FontSize="48" Foreground="#FFFFFF" Margin="8"/>
+                <Button Content="Refresh" FontSize="24" Width="100" Background="#FFFFFF" Margin="100, 32 0, 32" Click="btn_Refresh_Click"></Button>
+                <Button Content="Back" FontSize="24" Width="100" Background="#FFFFFF" Margin="64, 32, 0, 32" Click="btn_Back_Click"></Button>
+            </StackPanel>
+            <StackPanel Height="350" Orientation="Horizontal" Background="#78A1BB">
+                <StackPanel Width="300" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                        <TextBox Name="tbSearchItem" Width="125" FontSize="24" Margin="8"/>
+                        <Button Content="Search" FontSize="24" Margin="8" Padding="8, 0, 8, 0" Click="btn_Search_Click" IsDefault="True"/>
+                    </StackPanel>
+                    <ScrollViewer Width="250" Height="250" Background="#EAF5ED">
+                        <StackPanel Name="listItems"/>
+                    </ScrollViewer>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label Content="Top Bought Items" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <StackPanel Background="#EAF5ED" Orientation="Horizontal" Margin="8" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            <StackPanel>
+                                <Label Content="Item" FontSize="16" HorizontalAlignment="Center"/>
+                                <Label Name="buyItemOne" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemTwo" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemThree" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemFour" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemFive" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Content="Spent" FontSize="16" HorizontalAlignment="Center"/>
+                                <Label Name="buyItemOneSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemTwoSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemThreeSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemFourSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="buyItemFiveSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="250" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label Content="Top Loaned Items" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <StackPanel Background="#EAF5ED" Orientation="Horizontal" Margin="8" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <StackPanel>
+                                <Label Content="Item" FontSize="16" HorizontalAlignment="Center"/>
+                                <Label Name="loanItemOne" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemTwo" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemThree" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemFour" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemFive" Content="N.A." Width="100" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Content="Spent" FontSize="16" HorizontalAlignment="Center"/>
+                                <Label Name="loanItemOneSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemTwoSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemThreeSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemFourSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                                <Label Name="loanItemFiveSpent" Content="N.A." Width="60" FontSize="12" Background="#FF78A1BB" Margin="8"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

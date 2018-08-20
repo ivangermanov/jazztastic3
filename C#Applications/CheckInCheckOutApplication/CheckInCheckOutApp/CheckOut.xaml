@@ -1,0 +1,20 @@
+﻿<Page x:Class="CheckInCheckOutApp.CheckOut"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CheckInCheckOutApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CheckOut" Loaded="Page_Loaded">
+
+    <Grid Background="#FFEBF5EE">
+        <DockPanel Background="#FF283044" Margin="0,0,0,420.6">
+            <Label FontSize="48" Margin="23,0,0,0.2" FontWeight="Bold" Foreground="#FFEBF5EE" Content="Check-out" Padding="5,0" HorizontalAlignment="Center"/>
+            <Button Content="Back" FontSize="24" x:Name="btnBack" Width="116"
+                Height="43" Background="#FFEBF5EE" Margin="400,4,0,0" Click="btnBack_Click"/>
+        </DockPanel>
+        <ListBox Name="listBoxCheckOut" HorizontalAlignment="Left" Height="233" Margin="54,166,0,0" VerticalAlignment="Top" Width="691"/>
+        <Button Name="btnReturnRFID" Content="Return RFID tag" HorizontalAlignment="Left" Margin="54,85,0,0" VerticalAlignment="Top" Width="691" Height="63" Click="btnReturnRFID_Click"/>
+    </Grid>
+</Page>

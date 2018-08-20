@@ -1,0 +1,201 @@
+﻿<Page x:Class="LoanStandApplication.home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanStandApplication"
+        mc:Ignorable="d"
+        Title="home" Height="450" Width="800"
+        Background="#AB538B">
+    <Page.Resources>
+        <!--Scrollbar Thumbs-->
+        <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Grid x:Name="Grid">
+                            <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
+                            <Border x:Name="Rectangle1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Background="{TemplateBinding Background}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Tag" Value="Horizontal">
+                                <Setter TargetName="Rectangle1" Property="Width" Value="Auto" />
+                                <Setter TargetName="Rectangle1" Property="Height" Value="7" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBars-->
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+            <Setter Property="Foreground" Value="#8C325F" />
+            <Setter Property="Background" Value="#283044" />
+            <Setter Property="Width" Value="8" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                        <Grid x:Name="GridRoot"  Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.00001*" />
+                            </Grid.RowDefinitions>
+                            <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
+                                <Track.Thumb>
+                                    <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollThumbs}" />
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
+                                </Track.IncreaseRepeatButton>
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
+                                </Track.DecreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
+                            </Trigger>
+                            <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
+                            </Trigger>
+                            <Trigger Property="Orientation" Value="Horizontal">
+                                <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="-90" />
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                    <Setter.Value>
+                                        <RotateTransform Angle="-90" />
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Width" Value="Auto" />
+                                <Setter Property="Height" Value="8" />
+                                <Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
+                                <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                                <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+       
+
+    </Page.Resources>
+    <Grid >
+        <StackPanel Name="rootElement">
+            <StackPanel Name="highbar" Height="75" VerticalAlignment="Top" Margin="0" Background="#FF283043" Orientation="Horizontal">
+                <StackPanel Width="264" Margin="16,10,0,10.2" Background="#EAF5ED" Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Name"/>
+                        <Label Content="Employee ID"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label x:Name="Name" Content=""/>
+                        <Label x:Name="EmployeeId" Content=""/>
+                    </StackPanel>
+                </StackPanel>
+                <Button Content="Logout" FontSize="20" Height="50" Width="100" Margin="400,0 ,0, 0" Background="#EBF5ED" Click="logout"/>
+            </StackPanel>
+
+            <DockPanel x:Name="dockPanel" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="307">
+                <StackPanel Margin="0,0,0,-25.8">
+                    <DockPanel Height="49">
+                        <TextBlock Margin="2,2" UseLayoutRounding="False" MinWidth="154" FontSize="18" Text="Checkout List" TextAlignment="Center" Padding="0,10,0,0" Background="#FFEBF5EE" Width="145.8"/>
+                        <Button HorizontalAlignment="Right" Background="#FFEBF5EE" Margin="0,2,2,2" Click="EraseCheckOutList" BorderBrush="#FFEBF5EE">Erase List</Button>
+                    </DockPanel>
+                    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Auto" Background="#3FFFFFFF" Width="{Binding ActualWidth, ElementName=totalCostLabel, Mode=OneWay}" Height="284"  >
+                        <StackPanel  Name="CheckOutElementList"   VerticalAlignment="Top" >
+                            <Border BorderBrush="#FF283044" BorderThickness="0,0,0,4
+" VerticalAlignment="Center" Height="66" Margin="5,5,5,0">
+                                <DockPanel Background="#FFEBF5EE" Margin="0" >
+
+                                    <Label Name="idContainer" Content="id" Visibility="Collapsed"></Label>
+
+                                    <StackPanel Height="65" Margin="5,0,0,0" Width="126">
+                                        <DockPanel>
+                                            <Label Name="NameContainer" FontWeight="Bold" Margin="0,5,0,0" FontSize="10">Title</Label>
+
+                                        </DockPanel>
+                                        <DockPanel>
+
+
+                                            <Label Name="priceContainer" FontWeight="Bold" FontSize="10" >Price</Label>
+                                            <Label Name="quantityContainer" FontWeight="Bold" HorizontalAlignment="Right" FontSize="10">Quantity</Label>
+                                        </DockPanel>
+
+
+
+
+                                    </StackPanel>
+                                    <Button Name="EraserButton"  Margin="0,3,5,3" Width="45" BorderBrush="#00000000" Background="#FF78A1BB" FontSize="24" Padding="1,1,1,8" HorizontalAlignment="Right" >x</Button>
+                                </DockPanel>
+
+
+                            </Border>
+
+                        </StackPanel>
+
+                    </ScrollViewer>
+
+                </StackPanel>
+                <ScrollViewer Name="ScrollViewerContainer" HorizontalScrollBarVisibility="Auto" Background="#3FFFFFFF" Margin="0,0,0,-25.8">
+                    <StackPanel Name="ElementsColumns"  VerticalAlignment="Top"  >
+
+                        <DockPanel Name="RowElements">
+                            <Border Name="ElementDisplay" BorderBrush="#FF78A1BB" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,9,0,0">
+
+                                <StackPanel Name="container_background" Background="#FF78A1BB" Height="163" Margin="0" VerticalAlignment="Top" >
+                                    
+                                    <Label Name="IdContainer" Content="id" Visibility="Collapsed"></Label>
+
+                                    <Label Name="TitleContainer" Content="Label" HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="#FFEBF5EE"/>
+
+                                    <Button Name="ImageContainer" Background="White" HorizontalAlignment="Center" Height="94"  VerticalAlignment="Top" Width="110" Margin="0,5,0,10" Click="addElementToCheckList" Focusable="False" >
+                                        <!--
+                                        <Button.Template>
+                                           
+                                            <ControlTemplate>
+                                                
+                                            </ControlTemplate>
+                                           
+                                        </Button.Template>
+ -->
+                                        <Image Name="backgroundbutton" Source="Resources/temp.png"/>
+                                    </Button>
+                                    <StackPanel  HorizontalAlignment="Center"  VerticalAlignment="Top" Width="126"  Background="#FF283044" >
+                                        <Label  Name="PriceContainer" Content="Price" Foreground="#FFEBF5EE"   Height="20" HorizontalContentAlignment="Center" FontWeight="Bold" Padding="0,1,0,0"></Label>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </Border>
+
+
+
+
+                        </DockPanel>
+
+                    </StackPanel>
+
+                </ScrollViewer>
+
+
+            </DockPanel>
+            <DockPanel Height="69">
+                <Label x:Name="totalCostLabel" Width="210" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Background="#FFEBF5EE" Margin="0,26,0,-0.2" Content="total cost:"/>
+                <Button Width="300" FontWeight="Bold" FontSize="24" Background="#FF283044" Foreground="#FFEBF5EE" Click="Button_Click" Margin="0,26,0,-0.2" Content="Check Out!"/>
+                <Button FontWeight="Bold" FontSize="24" Background="#FFEBF5EE" Foreground="#FF283044" Content="Home" Click="Button_Click_2" Margin="0,26,0,-0.2"/>
+            </DockPanel>
+        </StackPanel>
+        <Rectangle Name="overlay" Fill="#7E000000" Visibility="Collapsed"></Rectangle>
+
+
+
+        <Button Name="temporary" Visibility="Collapsed"></Button>
+    </Grid>
+</Page>

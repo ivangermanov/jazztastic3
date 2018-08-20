@@ -1,0 +1,36 @@
+﻿<Page x:Class="LoanStandApplication.LoanStatus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanStandApplication"
+        mc:Ignorable="d"
+        Title="LoanStatus" Height="450" Width="800" Loaded="Page_Loaded">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="272" Background="#FFEBF5ED" Margin="0,0,0,-0.4">
+            <StackPanel Height="150" Margin="16,32,16,0" Background="#FF78A2BB" Orientation="Horizontal">
+                <StackPanel>
+                    <Label Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,16,0,0"/>
+                    <Label Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                    <Label Content="Goverment ID" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                    <Label Content="Date of Birth" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                    <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Name="FirstName" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,16,0,0"/>
+                    <Label Name="LastName" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                    <Label Name="GovCode" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                    <Label Name="DoB" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                    <Label Name="Email" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-1.795,-0.438" Height="23" Width="100" Margin="16,0,0,0"/>
+                </StackPanel>
+
+            </StackPanel>
+            <Button Content="HOME" Height="40" Background="#283043" FontFamily="Arial" Margin="0,16,0,0" Foreground="White" Click="btnHome_Click"/>
+        </StackPanel>
+        <ScrollViewer HorizontalAlignment="Left" Height="450" Margin="272,0,0,-0.4" VerticalAlignment="Top" Width="515" Background="#AB538D">
+            <StackPanel Name="ItemList" VerticalAlignment="Top">
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollBar HorizontalAlignment="Left" Margin="887,195,-110.4,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>

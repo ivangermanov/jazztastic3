@@ -1,0 +1,31 @@
+﻿<Window x:Class="LoanStandApplication.ItemInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanStandApplication"
+        mc:Ignorable="d"
+        Title="ItemInfo" Height="450" Width="800" Topmost="True" Closing="hide_overlay">
+    <Grid Background="#79A1BB">
+        <StackPanel Orientation="Horizontal" Background="White" Margin="378,257,54.2,61.8">
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="ItemName" FontSize="20" HorizontalAlignment="Left"/>
+                <Label Content="ItemNo" FontSize="20" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <Label Name="ItemNameC" Content="" FontSize="20" HorizontalAlignment="Left"/>
+                <Label Name="ItemNoC" Content="" FontSize="20" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Height="186" Margin="378,66,54.2,170.8" Width="363" Background="White">
+            <Label Content="Rent until" FontSize="20" HorizontalAlignment="Center"/>
+            <Label Name="ItemReturnDateC" Content="" FontSize="36" HorizontalAlignment="Center"/>
+            <Label Content="Accumulated cost" FontSize="20" HorizontalAlignment="Center" Margin="68,0,54,0" Width="178"/>
+            <Label Name="ItemRentCostC" Content="" FontSize="36" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Button Content="Add 1 Day" FontSize="20" HorizontalAlignment="Left" Margin="74,66,0,0" VerticalAlignment="Top" Width="145" Height="145" Background="#282E44" Foreground="White" Click="Button_Click_3"/>
+        <Button Content="Remove 1 Day" FontSize="20" HorizontalAlignment="Left" Margin="228,66,0,0" VerticalAlignment="Top" Width="145" Height="145" Background="#282E44" Foreground="White" Click="Button_Click_2"/>
+        <Button Content="Accept" FontSize="20" HorizontalAlignment="Left" Margin="74,216,0,0" VerticalAlignment="Top" Width="145" Height="145" Background="#282E44" Foreground="White" Click="Button_Click_1"/>
+        <Button Content="Decline" FontSize="20" HorizontalAlignment="Left" Margin="228,216,0,0" VerticalAlignment="Top" Width="145" Height="145" Background="#282E44" Foreground="White" Click="Button_Click"/>
+    </Grid>
+</Window>

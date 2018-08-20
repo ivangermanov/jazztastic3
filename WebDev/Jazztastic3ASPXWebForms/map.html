@@ -1,0 +1,66 @@
+<head>
+    <script src="jquery.js"></script>
+    <script src="jquery.panzoom.js"></script>
+    <script src="jquery.mousewheel.js"></script>
+</head>
+
+<body>
+    <section id="inverted-contain">
+        
+       
+    
+    </section>
+    <section id="focal">
+        <h1>Use the mousewheel to zoom on a focal point</h1>
+        <div class="parent">
+            <div class="panzoom">
+               
+                <img src="map.png" usemap="#image-map" >
+
+                <map name="image-map">
+                    <area target="" alt="" title="" href="a1" coords="1359,1306,1189,1715,1253,1804,1260,1888,1337,1900,1396,1848,1587,1826,1708,1572,1699,1399,1532,1334" shape="poly">
+                    <area target="" alt="" title="" href="a2" coords="2632,291,2308,1155,2431,1578,2861,1532,3031,1285,3084,913,3279,650,3269,554,2991,424,2997,363,2809,316" shape="poly">
+                    <area target="" alt="" title="" href="a3" coords="2196,112,1730,1229,2184,1448,2626,276" shape="poly">
+                    <area target="" alt="" title="" href="a4" coords="1717,1349,2060,1455,1931,1749,1686,1687,1730,1569,1714,1396,1686,1365" shape="poly">
+                    <area target="" alt="" title="" href="a5" coords="2435,1606,2818,1544,2812,1668,2898,1730,3003,1693,2991,1792,2951,1882,2533,1882,2323,1882,2339,1835,2376,1792,2428,1696" shape="poly">
+                    <area target="" alt="" title="" href="a6" coords="1346,1272,1145,1711,1028,1705,1229,1241" shape="poly">
+                    <area target="" alt="" title="" href="a7" coords="1250,1931,1266,1978,1427,2046,1380,2219,1284,2206,1263,2138,1204,2095,1093,2086,1037,2083,1065,2021,1114,1950,1164,1934" shape="poly">
+                    <area target="" alt="" title="" href="a8" coords="1863,1761,1730,2129,1884,2185,1961,2008,2033,1823" shape="poly">
+                    <area target="" alt="" title="" href="a9" coords="1674,1693,1612,1838,1417,1860,1303,1925,1303,1971,1427,2033,1433,2083,1488,2135,1606,2126,1665,2024,1717,1879,1782,1742" shape="poly">
+                </map>
+            </div>
+        </div>
+        <script>
+            (function() {
+                var $section = $('#focal');
+                var $panzoom = $section.find('.panzoom').panzoom();
+
+
+
+                $panzoom.panzoom({
+                    $zoomIn: $section.find(".zoom-in"),
+                    $zoomOut: $section.find(".zoom-out"),
+                    $zoomRange: $section.find(".zoom-range"),
+                    $reset: $section.find(".reset"),
+                    startTransform: 'scale(1.1)',
+                    increment: 0.1,
+                    minScale: 1,
+                    contain: 'invert'
+                }).panzoom('zoom');
+
+
+                $panzoom.parent().on('mousewheel.focal', function( e ) {
+                    e.preventDefault();
+                    var delta = e.delta || e.originalEvent.wheelDelta;
+                    var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+                    $panzoom.panzoom('zoom', zoomOut, {
+                        animate: false,
+                        focal: e
+                    });
+                });
+            })();
+        </script>
+    </section>
+
+
+</body>

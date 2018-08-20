@@ -1,0 +1,54 @@
+﻿<Page x:Class="ManagementApplication.Pages.VisitorOverviewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ManagementApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="VisitorOverviewPage" Background="#FFFFFF" Loaded="Page_Loaded">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Height="100" Background="#FF283044" Orientation="Horizontal">
+                <Label Content="Visitor Overview" Width="400" FontSize="48" Foreground="#FFFFFF" Margin="8"/>
+                <Button Content="Refresh" FontSize="24" Width="100" Background="#FFFFFF" Margin="100, 32 0, 32" Click="btn_Refresh_Click"></Button>
+                <Button Content="Back" FontSize="24" Width="100" Background="#FFFFFF" Margin="64, 32, 0, 32" Click="btn_Back_Click"></Button>
+            </StackPanel>
+            <StackPanel Height="350" Orientation="Horizontal" Background="#78A1BB">
+                <StackPanel Width="300" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                        <TextBox Name="tbSearchVisitor" Width="125" FontSize="24" Margin="8"/>
+                        <Button Content="Search" FontSize="24" Margin="8" Padding="8, 0, 8, 0" Click="btn_Search_Click" IsDefault="True"/>
+                    </StackPanel>
+                    <ScrollViewer Width="250" Height="250" Background="#EAF5ED">
+                        <StackPanel Name="listVisitors"/>
+                    </ScrollViewer>
+                </StackPanel>
+                <StackPanel Width="425" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Content="Top Spenders" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Background="#EAF5ED" Orientation="Horizontal" Margin="8" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                        <StackPanel>
+                            <Label Content="Visitor" FontSize="24" HorizontalAlignment="Center"/>
+                            <Label Name="visitorOne" Content="N.A." Width="200" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorTwo" Content="N.A." Width="200" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorThree" Content="N.A." Width="200" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorFour" Content="N.A." Width="200" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorFive" Content="N.A." Width="200" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Spent" FontSize="24" HorizontalAlignment="Center"/>
+                            <Label Name="visitorOneSpent" Content="N.A." Width="125" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorTwoSpent" Content="N.A." Width="125" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorThreeSpent" Content="N.A." Width="125" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorFourSpent" Content="N.A." Width="125" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                            <Label Name="visitorFiveSpent" Content="N.A." Width="125" FontSize="18" Background="#FF78A1BB" Margin="8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

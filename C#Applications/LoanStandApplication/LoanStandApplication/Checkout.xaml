@@ -1,0 +1,52 @@
+﻿<Window x:Class="LoanStandApplication.Checkout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanStandApplication"
+        mc:Ignorable="d"
+        Title="Checkout" Height="450" Width="800" Topmost="True" Closing="onclosin_">
+    <Grid Background="#79A1BB">
+        <StackPanel HorizontalAlignment="Left" Height="130" Margin="422,105,0,0" VerticalAlignment="Top" Width="363" Background="White" Orientation="Horizontal">
+            <StackPanel>
+                <Label Content="Date" FontSize="20" HorizontalAlignment="Left"/>
+                <Label Content="Receipt ID" FontSize="20" HorizontalAlignment="Left"/>
+                <Label Content="Balance" FontSize="20" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Name="DateC" FontSize="20" HorizontalAlignment="Left"/>
+                <Label Name="ReceiptIDC" FontSize="20" HorizontalAlignment="Left"/>
+                <Label Name="moneyC" FontSize="20" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="422,0,0,0" VerticalAlignment="Top" Width="363" Background="White">
+            <Label Content="Total Cost" FontSize="20" HorizontalAlignment="Center"/>
+            <Label Name="TotalCostValue" FontSize="28" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="187" VerticalAlignment="Top" Width="407" Background="White" Orientation="Horizontal" Margin="10,0,0,0">
+            <StackPanel>
+                <Label Content="Name" FontSize="22" HorizontalAlignment="Left"/>
+                <Label Content="Username" FontSize="22" HorizontalAlignment="Left"/>
+                <Label Content="Goverment ID" FontSize="22" HorizontalAlignment="Left"/>
+                <Label Content="Date of Birth" FontSize="22" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Name="NameC" Content="" FontSize="22" HorizontalAlignment="Left"/>
+                <Label Name="UsernameC" Content="" FontSize="22" HorizontalAlignment="Left"/>
+                <Label Name="GovIDC" Content="" FontSize="22" HorizontalAlignment="Left"/>
+                <Label Name="DoBC" Content="" FontSize="22" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Name="btnScanRFD" Text="Read RFID" FontSize="20" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="775" Height="32" Background="#282E44" Foreground="White" TextAlignment="Center" />
+        <Button Content="Accept" FontSize="20" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top" Width="250" Height="139" Background="#282E44" Foreground="White" Click="Button_Click_1"/>
+        <Button Content="Decline" FontSize="20" HorizontalAlignment="Left" Margin="535,276,0,0" VerticalAlignment="Top" Width="250" Height="140" Background="#282E44" Foreground="White" Click="Button_Click_2"/>
+
+        <StackPanel x:Name="stackPanel" Background="White" Margin="10,192,378.2,187.8">
+            <TextBlock Name="lblRFIDDevice" Text="Status of the RFID:" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" TextAlignment="Center" Margin="0,0,-0.2,0" Height="{Binding ActualHeight, ElementName=stackPanel, Mode=OneWay}" Padding="0,12,0,0"/>
+        </StackPanel>
+        <!--
+        <Label Name="lblRFID" Content="Label" HorizontalAlignment="Left" Margin="422,218,0,0" VerticalAlignment="Top"/>
+-->
+
+    </Grid>
+</Window>

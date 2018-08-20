@@ -1,0 +1,68 @@
+﻿<Page x:Class="ManagementApplication.Pages.EventOverviewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ManagementApplication.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EventOverviewPage" Background="#FFFFFF" Loaded="Page_Loaded">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Height="100" Background="#FF283044" Orientation="Horizontal">
+                <Label Content="Event Overview" Width="400" FontSize="48" Foreground="#FFFFFF" Margin="8"/>
+                <Button Content="Refresh" FontSize="24" Width="100" Background="#FFFFFF" Margin="100, 32 0, 32" Click="btn_Refresh_Click"></Button>
+                <Button Content="Back" FontSize="24" Width="100" Background="#FFFFFF" Margin="64, 32, 0, 32" Click="btn_Back_Click"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="8, 8, 0, 0">
+                        <StackPanel>
+                            <Label Content="Visitors Total" Width="250" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Visitors Checked-In" Width="250" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Visitors Total Balance" Width="250" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Camping Spots Free" Width="250" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Camping Spots Occupied" Width="250" FontSize="18" Background="#FF78A1BB" Margin="0, 16 0, 0" Padding="8"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Name="visitorTotal" Content="" Width="150" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="visitorCheckedIn" Content="" Width="150" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="visitorTotalBalance" Content="" Width="150" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="campingSpotsFree" Content="" Width="150" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="campingSpotsOccupied" Content="" Width="150" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Margin="32, 0, 0, 0" >
+                    <StackPanel Orientation="Horizontal" Margin="0, 16, 0, 0" HorizontalAlignment="Center">
+                        <StackPanel Margin="0, 16, 0, 0">
+                            <Button Content="Visitors Chart" FontSize="24" Click="DisplayVisitorChart"/>
+                        </StackPanel>
+                        <StackPanel Margin="16, 16, 0, 0">
+                            <Button Content="Revenue Chart" FontSize="24" Click="DisplayRevenueChart"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel>
+                            <Label Content="Event Total Revenue" Width="225" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Ticket Total Revenue" Width="225" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Camping Total Revenue" Width="225" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Content="Total Revenue" Width="225" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Name="eventTotalRevenue" Content="" Width="100" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="ticketTotalRevenue" Content="" Width="100" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="campingTotalRevenue" Content="" Width="100" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                            <Label Name="totalRevenue" Content="" Width="100" FontSize="18" Background="#FF78A1BB" Margin="0, 16, 0, 0" Padding="8"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                    
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

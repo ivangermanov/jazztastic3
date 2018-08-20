@@ -1,0 +1,59 @@
+﻿<Window x:Class="ManagementApplication.DetailWindows.VisitorDetailWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ManagementApplication.DetailWindows"
+      mc:Ignorable="d" 
+      Title="VisitorDetailWindow" Height="450" Width="800" Background="#FFFFFF"
+      ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Background="#78A1BB">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Visitor No" Width="150" FontSize="16"/>
+                        <Label Content="Name" Width="150" FontSize="16"/>
+                        <Label Content="Gov ID" Width="150" FontSize="16"/>
+                        <Label Content="Money" Width="150" FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Name="visitorNo" Content="" Width="225" FontSize="16"/>
+                        <Label Name="name" Content="" Width="225" FontSize="16"/>
+                        <Label Name="govId" Content="" Width="225" FontSize="16"/>
+                        <Label Name="money" Content="" Width="225" FontSize="16"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Date of Birth" Width="150" FontSize="16"/>
+                        <Label Content="Address" Width="150" FontSize="16"/>
+                        <Label Content="E-mail" Width="150" FontSize="16"/>
+                        <Label Content="Money Spent" Width="150" FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Name="dob" Content="" Width="225" FontSize="16"/>
+                        <Label Name="address" Content="" Width="225" FontSize="16"/>
+                        <Label Name="email" Content="" Width="225" FontSize="16"/>
+                        <Label Name="moneySpent" Content="" Width="225" FontSize="16"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 32">
+                <StackPanel Margin="0, 0, 16, 0">
+                    <Label Content="History" FontSize="24" HorizontalAlignment="Center"/>
+                    <ScrollViewer Height="200" Width="300">
+                        <StackPanel Name="listHistory"/>
+                    </ScrollViewer>
+                </StackPanel>
+                <StackPanel Margin="16, 0, 0, 0">
+                    <Label Content="Items" FontSize="24" HorizontalAlignment="Center"/>
+                    <ScrollViewer Height="200" Width="400">
+                        <StackPanel Name="listItems"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

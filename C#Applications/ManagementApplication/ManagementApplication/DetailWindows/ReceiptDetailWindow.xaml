@@ -1,0 +1,36 @@
+﻿<Window x:Class="ManagementApplication.DetailWindows.ReceiptDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagementApplication.DetailWindows"
+        mc:Ignorable="d"
+        Title="ReceiptDetailWindow" Height="400" Width="700" Background="#FFFFFF"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid>
+        <StackPanel>
+
+            <StackPanel Orientation="Horizontal" Background="#78A1BB">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Receipt No" Width="150" FontSize="16"/>
+                        <Label Content="Visitor No" Width="150" FontSize="16"/>
+                        <Label Content="Date" Width="150" FontSize="16"/>
+                        <Label Content="Employee ID" Width="150" FontSize="16"/>
+                        <Label Content="Total Price" Width="150" FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Name="receiptNo" Content="" Width="225" FontSize="16"/>
+                        <Label Name="visitorNo" Content="" Width="225" FontSize="16"/>
+                        <Label Name="date" Content="" Width="225" FontSize="16"/>
+                        <Label Name="employeeId" Content="" Width="225" FontSize="16"/>
+                        <Label Name="totalPrice" Content="" Width="225" FontSize="16"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <ScrollViewer Width="600" Height="200" Background="#EAF5ED">
+                <StackPanel Name="listItems"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+.priority-mt {
+    margin-top: 5rem;
+}
+
+.normal-mt {
+    margin-top: 10rem;
+}
+#logform{
+    --background-color:aqua;
+    margin-left:40%;
+    margin-right:40%;
+}
+
+.tab {
+    display:none;
+}
+
+.checkbox {
+    zoom: 1;
+    transform: scale(2);
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    -moz-transform: scale(2);
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
